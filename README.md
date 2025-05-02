@@ -10,4 +10,14 @@ Group 5's final project for COSC 5402 ENLP
 * Originals are very large (~50GB compressed). Takes 2.5 hours to decompress entirely, producing a 259GB file with many opinions.
 * Note that legal opinions are in the public domain and therefore **not** [subject to copyright](https://www.supremecourt.gov/opinions/19pdf/18-1150_7m58.pdf)
 
+# Generating alldocs.spacy
+```
+# Warning 43GB download
+$ wget https://storage.courtlistener.com/bulk-data/opinions-2025-03-31.csv.bz2 
+$ bunzip2 -d -c opinions-2025-03-31.csv.bz2 | head -n 1000000 | ./opinion_to_spacy.py docs > /dev/null
+...
+$ ls -l alldocs.spacy
 
+```
+
+ 
